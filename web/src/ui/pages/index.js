@@ -5,7 +5,7 @@ import { Redirect, Route, Switch, withRouter } from 'react-router-dom'
 import CSSModules from 'react-css-modules'
 
 import css from './index.css'
-import { protectedRoute } from 'Process/users/auth'
+// import { protectedRoute } from 'Process/users/auth'
 import Footer from 'UI/components/footer'
 import Header from 'UI/components/header'
 import connected from 'State/connect'
@@ -32,11 +32,11 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={home} />,
             <Route exact path="/login" component={login} />,
-            <Route exact path="/landing" component={protectedRoute(landing)} />
-            <Route exact path="/challenges" component={protectedRoute(() => {
+            <Route exact path="/landing" component={(landing)} />
+            <Route exact path="/challenges" component={(() => {
               <Redirect to={{ pathname: '/landing', state: { from: this.props.location } }} />
             })} />
-            <Route exact path="/challenges/pyramid" component={protectedRoute(pyramid)} />
+            <Route exact path="/challenges/pyramid" component={(pyramid)} />
             <Route component={BadRequest} />
           </Switch>
         </div>
