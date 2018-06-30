@@ -6,10 +6,22 @@
 import React, { Component } from 'react'
 
 class Homepage extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      open: props.open
+    }
+  }
   render() {
+    if (!this.props.open)
+      return null
+
+
     return (
-      <div>
-        Homepage here!!!!!
+      <div onClick={this.handleClick}>
+          <div>
+            Hi i'm the modal
+          </div>
       </div>
     )
   }
