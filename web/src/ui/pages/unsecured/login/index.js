@@ -28,6 +28,7 @@ class Login extends Component {
   }
 
   handleClick = () => {
+    console.log('Hey bryce hacked my machine!!!')
     const { email, password } = this.state
     this.props.loginProcess(email, password)
   }
