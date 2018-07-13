@@ -14,8 +14,8 @@ class BadRequest extends Component {
     return (
       <div>
         <h1>The page you are looking for does not exist.</h1>
-        <img styleName="myErrPic" src={require('./404Error.jpg')} alt="" />
-        <img src={require('./bender-gif-7.gif')} alt="" />
+        {/* <img src={require('./404Error.jpg')} styleName="c404" alt="bad-404" /> */}
+        <img styleName="test12" src={require('./404Error.jpg')} alt="H" />
         <Link to="/login">Go-To-Log-in-Page</Link>
       </div>
     )
