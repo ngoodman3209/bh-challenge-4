@@ -1,0 +1,16 @@
+.myErrPic{
+  max-width: 400px;
+  height: auto;
+}
+
+.test12{
+  border: 10px solid red;
+  height: 70px;
+  width: auto;
+  animation: test12-spin infinite 10s linear;
+}
+
+@keyframes test12-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

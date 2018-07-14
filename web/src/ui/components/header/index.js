@@ -6,7 +6,7 @@ import CSSModules from 'react-css-modules'
 import connected from 'State/connect'
 import { selector as UsersState } from 'Process/users/reducer'
 import css from './index.css'
-// import Logo from './logo.svg'
+// import Logo from './stuff.png'
 import UserLinks from './user-dropdown'
 import DefaultLinks from './nav-links'
 
@@ -17,8 +17,9 @@ class Header extends Component {
 
     return (
       <div styleName="container">
-        <Link to="/">
-          <div styleName="logo">{/* <Logo /> */}</div>
+        <h1>Team three</h1>
+        <Link to="/login">
+          <img styleName="Stuff1" src={require('./stuff.png')} />
         </Link>
         <div styleName="active-links">
           {rightSide}
