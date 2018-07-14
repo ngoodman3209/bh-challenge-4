@@ -26,6 +26,7 @@ class LandingPage extends Component {
         <ol>
           <li>
             <Link to="/challenges/pyramid">Pyramid Challenge</Link>
+            <Link to="/challenges/string-manipulation">Pyramid Challenge</Link>
           </li>
         </ol>
       </div>
