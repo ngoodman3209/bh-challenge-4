@@ -29,10 +29,6 @@ class homepage extends Component {
   }
 
   render() {
-    if (!this.props.open)
-      return null
-
-
     return (
       <div styleName="main-container">
         <div styleName="welcome">
