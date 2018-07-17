@@ -1,6 +1,6 @@
-// TODO Challenge 4
+// TODO Challenge 4 - DIANNE added the loading false, error, and handleClick if '@' and timeout.
 // Add a loading spinner for when waiting on the API to give the green light
-// Show an error message when the use enters bad data.
+// Show an error message when the user enters bad data.
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import CSSModules from 'react-css-modules'
@@ -15,7 +15,9 @@ class Login extends Component {
     super(props)
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      loading: false,
+      error: false
     }
   }
 
@@ -28,9 +30,20 @@ class Login extends Component {
   }
 
   handleClick = () => {
-    console.log('Hey bryce hacked my machine!!!')
     const { email, password } = this.state
-    this.props.loginProcess(email, password)
+
+    if (email.indexOf('@') === -1) {
+      this.setState({ error: true })
+      return
+    }
+
+    if (email.indexOf('.com') === -1) {
+      this.setState({ error: true })
+      return
+    }
+
+    this.setState({ loading: true })
+    setTimeout(() => this.props.loginProcess(email, password), 6000)
   }
 
   render() {
@@ -38,6 +51,8 @@ class Login extends Component {
       <PageTemplate>
         <div styleName="title">Welcome to Helio Challenges</div>
         <div styleName="description"> Sign in with your information below</div>
+        {this.state.loading ? <img src="sadFace.png" styleName="loading" /> : null}
+        {this.state.error ? <div>Please provide a correct email</div> : null}
         <form styleName="form">
           <Input icon="user circle" iconPosition="left" size="big" placeholder="Your Email" type="text"
             value={this.state.email} onChange={this.handleInputEmail} />

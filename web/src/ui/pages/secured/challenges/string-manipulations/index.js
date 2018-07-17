@@ -8,3 +8,41 @@
 //            It should effect both it's output but also the output for the filtered component
 //        One that will filter out characters from the string
 //            This component will have an additional input that will be used to filter characters (only use props & comp state)
+
+// TODO Challenge 4 - see below DIANNE - started the string-manipulation page - redux-saga state tree has not been added.
+import React, { Component } from 'react'
+import { Link, withRouter } from 'react-router-dom'
+import CSSModules from 'react-css-modules'
+
+import css from './index.css'
+import connected from 'State/connect'
+
+class StringManipulation extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      parentValue: ''
+    }
+  }
+
+  handleZipChange = (event) => {
+    event.preventDefault()
+    this.setState({
+      parentValue: event.target.value
+    })
+  }
+  render() {
+    return (
+      <div styleName="container">
+        <h1>String Manipulation</h1>
+        <ol>
+          <li>
+            <Link to="/challenges/string-manipulations">String Manipulation</Link>
+          </li>
+        </ol>
+      </div>
+    )
+  }
+}
+
+export default withRouter(connected([], [])(CSSModules(StringManipulation, css)))

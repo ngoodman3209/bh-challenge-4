@@ -19,10 +19,21 @@
 
   :global {
     .ui.big.input {
-      margin-bottom: 25px;
+    margin-bottom: 25px;
     }
-    .ui.button{
-      margin: 0 0 20px 0;
+
+  .ui.button{
+    margin: 0 0 20px 0;
     }
   }
+}
+
+.loading {
+  animation: loading-spin infinite 10s linear;
+  height: 70px;
+}
+
+@keyframes loading-spin {
+  from { transform: rotate(0deg); }
+  to { transform:rotate(360deg); }
 }

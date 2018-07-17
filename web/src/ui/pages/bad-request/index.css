@@ -1,0 +1,17 @@
+.text {
+  text-align: center;
+}
+
+.sadFace {
+  animation: sadFace-spin infinite 10s linear;
+  height: 70px;
+}
+
+@keyframes sadFace-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
