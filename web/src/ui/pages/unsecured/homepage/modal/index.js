@@ -1,7 +1,5 @@
 import CSSModules from 'react-css-modules'
-import React, {
-  Component
-} from 'react'
+import React, { Component } from 'react'
 import css from './index.css'
 // var Carousel = require('react-responsive-carousel').Carousel
 
@@ -20,38 +18,30 @@ class Modal extends Component {
   }
   render() {
     return (
-      <div styleName="main-container" >
-      <div styleName="welcome" >
-      <p styleName="one" > Welcome </p>
-      <p styleName="one" > Lets CodeIT </p>
+      <div styleName="main-container">
+      <div styleName="welcome">
+      <p styleName="one"> Welcome </p>
+      <p styleName="one"> Lets CodeIT </p>
       </div>
       <div styleName="main-pics-cont" >
       <div>
-      <img styleName = "car-pix" src={require(`./modal/pix/${this.state.p1}.jpg`)
-      }
+      <img styleName="car-pix" src={require(`./modal/pix/${this.state.p1}.jpg`)}
       alt = "k" />
       <p className="legend" > Legend 1 </p>
       </div>
-      <div >
-      <img styleName = "car-pix" src={require(`./modal/pix/${this.state.p2}.jpg`)
+      <div>
+      <img styleName="car-pix" src={require(`./modal/pix/${this.state.p2}.jpg`)
       }
       alt = "k" />
-      <p className = "legend" > Legend 2 < /p> <
-      /div> <
-      div >
-      <
-      img styleName = "car-pix"
-      src = {
-        require(`./modal/pix/${this.state.p3}.jpg`)
-      }
-      alt = "k" / >
-      <
-      p className = "legend" > Legend 3 < /p> <
-      /div> <
-      /div> <
-      div styleName = "buttons-cont" >
-      <
-      button onClick = {
+      <p className="legend" > Legend 2 </p>
+      </div>
+      <div>
+      <img styleName="car-pix" src = {require(`./modal/pix/${this.state.p3}.jpg`)} alt="k" />
+      <p className="legend" > Legend 3 </p>
+      </div>
+      </div>
+      <div styleName = "buttons-cont" >
+      <button onClick = {
         () => {
           console.log('Left')
           if (this.state.p1 === 1) {
@@ -80,9 +70,7 @@ class Modal extends Component {
             })
           }
         }
-      } > Left < /button> <
-      button onClick = {
-        () => {
+      } > Left </button> <button onClick = {() => {
           console.log('Right')
           if (this.state.p1 === 5) {
             this.setState({
@@ -109,9 +97,9 @@ class Modal extends Component {
             })
           }
         }
-      } > Right < /button> <
-      /div> <
-      /div>
+      } > Right </button>
+      </div>
+      </div>
     )
   }
 }
